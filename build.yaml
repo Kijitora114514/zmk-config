@@ -23,3 +23,7 @@ include:
     shield: helix_left
   - board: nrfmicro_13_52833
     shield: helix_right
+  - board: nrfmicro_11
+    shield: helix_left
+  - board: nrfmicro_11
+    shield: helix_right
