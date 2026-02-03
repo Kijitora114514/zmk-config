@@ -23,3 +23,5 @@ include:
     shield: test_left
   - board: seeeduino_xiao_ble
     shield: test_right
+  - board: seeeduino_xiao_ble
+    shield: settings_reset
