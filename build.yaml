@@ -26,3 +26,5 @@ include:
     shield: test_right
   - board: seeeduino_xiao_ble
     shield: settings_reset
+  - board: raytac_mdbt50q_rx
+    shield: settings_reset
