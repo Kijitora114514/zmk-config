@@ -19,7 +19,7 @@
 #
 ---
 include:
-  - board: raytac_mdbt50q_rx
+  - board: mdbt50q_rx
 #  - board: seeeduino_xiao_ble
     shield: test_left
   - board: seeeduino_xiao_ble
