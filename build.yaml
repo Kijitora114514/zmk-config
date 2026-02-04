@@ -19,8 +19,9 @@
 #
 ---
 include:
+  - board: seeeduino_xiao_ble
+    shield: test_left
   - board: raytac_mdbt50q_rx
-#  - board: seeeduino_xiao_ble
     shield: test_left
   - board: seeeduino_xiao_ble
     shield: test_right
