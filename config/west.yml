@@ -11,8 +11,10 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
+      revision: v0.4 # <-- ZMK pinned to v0.4
       import: app/west.yml
     - name: zmk-component-raytac-dongle
       remote: rschenk
+      revision: v0.4 # <-- This module pinned to the same 
   self:
     path: config
