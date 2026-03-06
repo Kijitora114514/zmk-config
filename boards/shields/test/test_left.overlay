@@ -13,4 +13,10 @@
         = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> //Col0
         , <&gpio0 04 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> //Col1
         ;
+    row-gpios
+        // = <&xiao_d 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        // , <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        = <&gpio0 02 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&gpio0 03 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        ;
 };
