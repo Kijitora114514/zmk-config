@@ -23,7 +23,6 @@
         ;
     */
     compatible = "zmk,kscan-gpio-direct";
-    diode-direction = "col2row";
     input-gpios = 
         , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
         , <&gpio0 02 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
