@@ -27,5 +27,5 @@
         = <&gpio0 02 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
         , <&gpio0 03 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
         ;
-    wakeup-source;
+    //wakeup-source;
 };
