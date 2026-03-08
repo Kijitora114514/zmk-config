@@ -1,0 +1,16 @@
+if SHIELD_O67_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "o67"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif # SHIELD_O67_LEFT
+
+if SHIELD_O67_LEFT || SHIELD_O67_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif # SHIELD_O67_LEFT || SHIELD_O67_RIGHT

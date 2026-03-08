@@ -20,13 +20,13 @@
 ---
 include:
   - board: seeeduino_xiao_ble
-    shield: test_left
+    shield: o67_left
   - board: raytac_mdbt50q_rx
-    shield: test_left
+    shield: o67_left
   - board: seeeduino_xiao_ble
-    shield: test_right
+    shield: o67_right
   - board: raytac_mdbt50q_rx
-    shield: test_right
+    shield: o67_right
   - board: seeeduino_xiao_ble
     shield: settings_reset
   - board: raytac_mdbt50q_rx
