@@ -4,11 +4,11 @@
 
 #include "o67.dtsi"
 
-/*&default_transform {
+&default_transform {
     // Set this to the number of columns on the left side.
     //row-offset = <1>;
     col-offset = <7>;
-};*/
+};
 
 &kscan {
     compatible = "zmk,kscan-gpio-matrix";
