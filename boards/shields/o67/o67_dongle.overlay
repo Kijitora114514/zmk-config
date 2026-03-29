@@ -17,9 +17,10 @@
 
 
 / {
+    /* RGB Underglowで参照される ext_power デバイスをダミーで定義（無効化） */
     ext-power {
         compatible = "zmk,ext-power-generic";
-        status = "disabled";
+        status = "disabled";           /* これで参照されてもエラー回避 */
+        label = "EXT_POWER";
     };
 };
-
