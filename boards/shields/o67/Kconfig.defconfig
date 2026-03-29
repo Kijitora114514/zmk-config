@@ -14,3 +14,5 @@ config ZMK_SPLIT
     default y
 
 endif # SHIELD_O67_DONGLE || SHIELD_O67_LEFT || SHIELD_O67_RIGHT
+
+
