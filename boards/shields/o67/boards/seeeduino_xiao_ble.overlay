@@ -37,7 +37,7 @@
 };
 
 /* Underglow登録 */
- / {
+/ {
     chosen {
         zmk,underglow = &led_strip;
         /* ここでPeripheral側と同じmatrix_transformを参照（新規定義なし） */
