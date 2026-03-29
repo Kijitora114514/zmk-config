@@ -38,10 +38,3 @@
                          LED_COLOR_ID_BLUE>;
     };
 };
-
-/* Underglow登録（board overlayではこの形式） */
- / {
-    chosen {
-        zmk,underglow = &led_strip;
-    };
-};

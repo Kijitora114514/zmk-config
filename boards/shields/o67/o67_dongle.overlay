@@ -24,3 +24,10 @@
         , <&gpio1 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // SW_SPD
         ;
 };
+
+/* Underglow登録（board overlayではこの形式） */
+ / {
+    chosen {
+        zmk,underglow = &led_strip;
+    };
+};
