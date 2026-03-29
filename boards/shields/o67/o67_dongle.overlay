@@ -1,0 +1,16 @@
+// This file was generated from a template. Edit it to match your keyboard.
+// See https://zmk.dev/docs/development/hardware-integration/new-shield for more
+// instructions.
+
+#include "o67.dtsi"
+
+&kscan {
+    compatible = "zmk,kscan-gpio-direct";
+    input-gpios
+        = <&gpio0 04 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // SW_H
+        , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // SW_S
+        , <&gpio0 05 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // SW_V
+        , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // SW_MOD
+        , <&gpio1 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // SW_SPD
+        ;
+};

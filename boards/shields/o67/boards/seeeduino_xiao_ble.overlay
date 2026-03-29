@@ -27,7 +27,7 @@
         compatible = "worldsemi,ws2812-spi";
         reg = <0>;
         spi-max-frequency = <3200000>;
-        chain-length = <27>;           /* ← ここを実際のLED個数に変更（例: 10なら <10>） */
+        chain-length = <27>;           /* ← 実際のLED個数に合わせて変更 */
         spi-one-frame = <0x70000000>;
         spi-zero-frame = <0x40000000>;
         color-mapping = <LED_COLOR_ID_GREEN
@@ -36,9 +36,11 @@
     };
 };
 
-/* Underglow登録のみ */
+/* Underglow登録 */
  / {
     chosen {
         zmk,underglow = &led_strip;
+        /* ここでPeripheral側と同じmatrix_transformを参照（新規定義なし） */
+        zmk,matrix-transform = &default_transform;   /* ← あなたのキーボードの実際のラベルに変更してください */
     };
 };
