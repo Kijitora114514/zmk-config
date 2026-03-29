@@ -1,17 +1,23 @@
-#include <dt-bindings/led/led.h>
+// This file was generated from a template. Edit it to match your keyboard.
+// See https://zmk.dev/docs/development/hardware-integration/new-shield for more
+// instructions.
 
-/* XIAO nRF52840 で P0.03 を WS2812 データピンに使用 */
-&pinctrl {
-    spi3_default: spi3_default {
-        group1 {
-            psels = <NRF_PSEL(SPIM_MOSI, 0, 3)>;
-        };
-    };
+#include "o67.dtsi"
 
-    spi3_sleep: spi3_sleep {
-        group1 {
-            psels = <NRF_PSEL(SPIM_MOSI, 0, 3)>;
-            low-power-enable;
-        };
-    };
+/*&default_transform {
+    // Set this to the number of columns on the left side.
+    //row-offset = <1>;
+    col-offset = <7>;
+};*/
+
+
+&kscan {
+    compatible = "zmk,kscan-gpio-direct";
+    input-gpios
+        = <&gpio0 04 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // SW_H
+        , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // SW_S
+        , <&gpio0 05 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // SW_V
+        , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // SW_MOD
+        , <&gpio1 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // SW_SPD
+        ;
 };
