@@ -35,12 +35,3 @@
                          LED_COLOR_ID_BLUE>;
     };
 };
-
-/* Underglow登録 */
-/ {
-    chosen {
-        zmk,underglow = &led_strip;
-        /* ここでPeripheral側と同じmatrix_transformを参照（新規定義なし） */
-        zmk,matrix-transform = &default_transform;   /* ← あなたのキーボードの実際のラベルに変更してください */
-    };
-};
