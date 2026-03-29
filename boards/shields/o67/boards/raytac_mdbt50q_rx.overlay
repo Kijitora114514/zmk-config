@@ -1,6 +1,5 @@
 #include <dt-bindings/led/led.h>
 
-/* Raytac MDBT50Q-RX で P0.03 を WS2812 データ出力に使用 */
 &pinctrl {
     spi3_default: spi3_default {
         group1 {
@@ -27,7 +26,7 @@
         compatible = "worldsemi,ws2812-spi";
         reg = <0>;
         spi-max-frequency = <3200000>;
-        chain-length = <27>;                    /* ← あなたのドングルに付けたLEDの個数に変更してください */
+        chain-length = <24>;
         spi-one-frame = <0x70000000>;
         spi-zero-frame = <0x40000000>;
         color-mapping = <LED_COLOR_ID_GREEN
