@@ -1,6 +1,6 @@
 #include <dt-bindings/led/led.h>
 
-/* P0.03 (D1ピン) を WS2812 のデータ出力に使用 */
+/* XIAO nRF52840 で P0.03 (D1) を WS2812 データピンに使用 */
 &pinctrl {
     spi3_default: spi3_default {
         group1 {
@@ -16,7 +16,7 @@
     };
 };
 
-/* SPI3 を有効化 + WS2812 LEDストリップ定義 */
+/* SPI3有効化 + LEDストリップ定義 */
 &spi3 {
     compatible = "nordic,nrf-spim";
     status = "okay";
@@ -28,7 +28,7 @@
         compatible = "worldsemi,ws2812-spi";
         reg = <0>;
         spi-max-frequency = <3200000>;
-        chain-length = <10>;               /* ← ここをあなたのドングルに付けた実際のLED個数に変更（超重要） */
+        chain-length = <8>;                /* ← ここをあなたのドングルに付けた実際のLED個数に変更！ */
         spi-one-frame = <0x70000000>;
         spi-zero-frame = <0x40000000>;
         color-mapping = <LED_COLOR_ID_GREEN
@@ -37,7 +37,7 @@
     };
 };
 
-/* UnderglowとしてZMKに登録（board overlayではこの形式が安定） */
+/* Underglow登録（board overlayではこの形式） */
  / {
     chosen {
         zmk,underglow = &led_strip;
