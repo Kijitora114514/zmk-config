@@ -19,10 +19,11 @@
         , <&gpio0 05 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // SW_V
         , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // SW_MOD
         , <&gpio1 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // SW_SPD
-    ;
+        ;
 };
 
 
 chosen {
     zmk,underglow = &led_strip;
 };
+
