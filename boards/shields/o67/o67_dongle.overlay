@@ -28,46 +28,44 @@
 
 #include <dt-bindings/led/led.h>
 
-/ {
-    /* pinctrl定義：P0.03 を SPI3 MOSI（データ出力）として使用 */
-    &pinctrl {
-        spi3_default: spi3_default {
-            group1 {
-                psels = <NRF_PSEL(SPIM_MOSI, 0, 3)>;  /* P0.03 = Data In for WS2812 */
-            };
-        };
-
-        spi3_sleep: spi3_sleep {
-            group1 {
-                psels = <NRF_PSEL(SPIM_MOSI, 0, 3)>;
-                low-power-enable;
-            };
+/* pinctrlのサブノード定義（最上位に書く） */
+&pinctrl {
+    spi3_default: spi3_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 3)>;  /* P0.03 を MOSIとして使用 */
         };
     };
 
-    /* SPI3を有効化してWS2812ドライバをアタッチ */
-    &spi3 {
-        compatible = "nordic,nrf-spim";
-        status = "okay";
-        pinctrl-0 = <&spi3_default>;
-        pinctrl-1 = <&spi3_sleep>;
-        pinctrl-names = "default", "sleep";
-
-        led_strip: ws2812@0 {
-            compatible = "worldsemi,ws2812-spi";
-            reg = <0>;
-            spi-max-frequency = <4000000>;     /* 4MHzが安定しやすい */
-            chain-length = <27>;               /* ← あなたのドングルに付けるLEDの個数に変更！ */
-            spi-one-frame = <0x70000000>;
-            spi-zero-frame = <0x40000000>;
-            color-mapping = <LED_COLOR_ID_GREEN
-                             LED_COLOR_ID_RED
-                             LED_COLOR_ID_BLUE>;  /* GRB順（WS2812/SK6812標準） */
+    spi3_sleep: spi3_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 3)>;
+            low-power-enable;
         };
     };
+};
 
-    /* UnderglowとしてZMKに認識させる（超重要） */
-    chosen {
-        zmk,underglow = &led_strip;
+/* SPI3ノードの有効化 + LEDストリップ定義 */
+&spi3 {
+    compatible = "nordic,nrf-spim";
+    status = "okay";
+    pinctrl-0 = <&spi3_default>;
+    pinctrl-1 = <&spi3_sleep>;
+    pinctrl-names = "default", "sleep";
+
+    led_strip: ws2812@0 {
+        compatible = "worldsemi,ws2812-spi";
+        reg = <0>;
+        spi-max-frequency = <3200000>;     /* 少し下げて安定優先 */
+        chain-length = <10>;               /* ← ここをあなたのドングルに付けたLEDの個数に変更してください */
+        spi-one-frame = <0x70000000>;
+        spi-zero-frame = <0x40000000>;
+        color-mapping = <LED_COLOR_ID_GREEN
+                         LED_COLOR_ID_RED
+                         LED_COLOR_ID_BLUE>;
     };
+};
+
+/* ZMKにUnderglowとして認識させる */
+chosen {
+    zmk,underglow = &led_strip;
 };
