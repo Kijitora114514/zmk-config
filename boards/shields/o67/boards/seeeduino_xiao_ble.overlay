@@ -1,5 +1,3 @@
-</boards/seeeduino_xiao_ble.overlay>
-
 #include <dt-bindings/led/led.h>
 
 &pinctrl {
