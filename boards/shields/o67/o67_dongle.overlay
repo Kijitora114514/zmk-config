@@ -28,11 +28,11 @@
 
 #include <dt-bindings/led/led.h>
 
-/* pinctrlのサブノード定義（最上位に書く） */
+/* 1. pinctrl定義（P0.03 = D1ピン） */
 &pinctrl {
     spi3_default: spi3_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_MOSI, 0, 3)>;  /* P0.03 を MOSIとして使用 */
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 3)>;  /* Data pin for WS2812 */
         };
     };
 
@@ -44,7 +44,7 @@
     };
 };
 
-/* SPI3ノードの有効化 + LEDストリップ定義 */
+/* 2. SPI3 + WS2812 LEDストリップ */
 &spi3 {
     compatible = "nordic,nrf-spim";
     status = "okay";
@@ -55,8 +55,8 @@
     led_strip: ws2812@0 {
         compatible = "worldsemi,ws2812-spi";
         reg = <0>;
-        spi-max-frequency = <3200000>;     /* 少し下げて安定優先 */
-        chain-length = <10>;               /* ← ここをあなたのドングルに付けたLEDの個数に変更してください */
+        spi-max-frequency = <3200000>;
+        chain-length = <10>;               /* ← ここを実際のLED個数に変更（例: 8個なら <8>） */
         spi-one-frame = <0x70000000>;
         spi-zero-frame = <0x40000000>;
         color-mapping = <LED_COLOR_ID_GREEN
@@ -65,7 +65,7 @@
     };
 };
 
-/* ZMKにUnderglowとして認識させる */
-chosen {
+/* 3. UnderglowとしてZMKに登録（ここが前回のミス箇所） */
+&chosen {
     zmk,underglow = &led_strip;
 };
