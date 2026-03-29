@@ -23,12 +23,12 @@ include:
     shield: o67_dongle
   - board: raytac_mdbt50q_rx
     shield: o67_dongle
-  - board: seeeduino_xiao_ble
-    shield: o67_left
+#  - board: seeeduino_xiao_ble
+#    shield: o67_left
   - board: raytac_mdbt50q_rx
     shield: o67_left
-  - board: seeeduino_xiao_ble
-    shield: o67_right
+#  - board: seeeduino_xiao_ble
+#    shield: o67_right
   - board: raytac_mdbt50q_rx
     shield: o67_right
   - board: seeeduino_xiao_ble
