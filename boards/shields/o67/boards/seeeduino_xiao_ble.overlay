@@ -1,5 +1,6 @@
 #include <dt-bindings/led/led.h>
 
+/* XIAO nRF52840 P0.03 (D1) を WS2812 データピンとして使用 */
 &pinctrl {
     spi3_default: spi3_default {
         group1 {
@@ -18,21 +19,26 @@
 &spi3 {
     compatible = "nordic,nrf-spim";
     status = "okay";
-
     pinctrl-0 = <&spi3_default>;
     pinctrl-1 = <&spi3_sleep>;
     pinctrl-names = "default", "sleep";
 
     led_strip: ws2812@0 {
         compatible = "worldsemi,ws2812-spi";
-
         reg = <0>;
-        spi-max-frequency = <4000000>;
-        chain-length = <27>; 
-        spi-one-frame = <0x70>;
-        spi-zero-frame = <0x40>;
+        spi-max-frequency = <3200000>;
+        chain-length = <27>;        /* ← あなたのドングルに付けたLEDの実際の個数に変更 */
+        spi-one-frame = <0x70000000>;
+        spi-zero-frame = <0x40000000>;
         color-mapping = <LED_COLOR_ID_GREEN
                          LED_COLOR_ID_RED
                          LED_COLOR_ID_BLUE>;
+    };
+};
+
+/* ここが一番重要：chosenノードを正しく定義 */
+ / {
+    chosen {
+        zmk,underglow = &led_strip;
     };
 };
