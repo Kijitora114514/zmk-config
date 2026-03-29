@@ -1,28 +1,43 @@
-// This file was generated from a template. Edit it to match your keyboard.
-// See https://zmk.dev/docs/development/hardware-integration/new-shield for more
-// instructions.
+#include <dt-bindings/led/led.h>
 
-#include "o67.dtsi"
+/* XIAO nRF52840 で P0.03 を WS2812 データピンに使用 */
+&pinctrl {
+    spi3_default: spi3_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 3)>;
+        };
+    };
 
-/*&default_transform {
-    // Set this to the number of columns on the left side.
-    //row-offset = <1>;
-    col-offset = <7>;
-};*/
-
-
-&kscan {
-    compatible = "zmk,kscan-gpio-direct";
-    input-gpios
-        = <&gpio0 04 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // SW_H
-        , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // SW_S
-        , <&gpio0 05 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // SW_V
-        , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // SW_MOD
-        , <&gpio1 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // SW_SPD
-        ;
+    spi3_sleep: spi3_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 3)>;
+            low-power-enable;
+        };
+    };
 };
 
-/ {
+&spi3 {
+    compatible = "nordic,nrf-spim";
+    status = "okay";
+    pinctrl-0 = <&spi3_default>;
+    pinctrl-1 = <&spi3_sleep>;
+    pinctrl-names = "default", "sleep";
+
+    led_strip: ws2812@0 {
+        compatible = "worldsemi,ws2812-spi";
+        reg = <0>;
+        spi-max-frequency = <3200000>;
+        chain-length = <8>;                 /* ← ここを実際のLED個数に変更（例: 8個なら <8>） */
+        spi-one-frame = <0x70000000>;
+        spi-zero-frame = <0x40000000>;
+        color-mapping = <LED_COLOR_ID_GREEN
+                         LED_COLOR_ID_RED
+                         LED_COLOR_ID_BLUE>;
+    };
+};
+
+/* ZMK Underglow登録（公式推奨形式） */
+ / {
     chosen {
         zmk,underglow = &led_strip;
     };
