@@ -27,7 +27,7 @@
         compatible = "worldsemi,ws2812-spi";
         reg = <0>;
         spi-max-frequency = <3200000>;
-        chain-length = <27>;           /* ← 実際のLED個数に合わせて変更してください */
+        chain-length = <27>;           /* ← ここを実際のLED個数に変更（例: 10なら <10>） */
         spi-one-frame = <0x70000000>;
         spi-zero-frame = <0x40000000>;
         color-mapping = <LED_COLOR_ID_GREEN
@@ -36,17 +36,9 @@
     };
 };
 
-/* Underglow登録 + ext_power ダミー定義（これでエラーを回避） */
+/* Underglow登録のみ */
  / {
     chosen {
         zmk,underglow = &led_strip;
-    };
-
-    /* ext_power ダミー（電源制御回路がなくても必須） */
-    ext_power: ext-power {
-        compatible = "zmk,ext-power-generic";
-        label = "EXT_POWER";
-        control-gpios = <&gpio0 0 GPIO_ACTIVE_HIGH>;  /* ダミー値（ピン0は使わない） */
-        status = "okay";
     };
 };
