@@ -9,6 +9,26 @@
                 
 
 / {
+    aliases {
+        led-red = &led0;
+        led-green = &led1;
+        led-blue = &led2;
+    };
+
+    leds {
+        compatible = "gpio-leds";
+        status = "okay";
+        led0: led_0 {
+            gpios = <&gpio0 26 GPIO_ACTIVE_LOW>;  // red LED, connected to P0.26
+        };
+        led1: led_1 {
+            gpios = <&gpio0 30 GPIO_ACTIVE_LOW>;  // green LED, connected to P0.30
+        };
+        led2: led_2 {
+            gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;  // blue LED, connected to P0.06
+        };
+    };
+
     // Define a default keymap here.
     // See https://zmk.dev/docs/development/hardware-integration/new-shield#default-keymap.
     keymap {
@@ -16,7 +36,7 @@
 
         default_layer {
             bindings = <
-                &kp A     &rgb_ug RGB_COLOR_HSB(0, 100, 50)   &rgb_ug RGB_TOG          &rgb_ug RGB_HUI        &kp S
+                &rgb_ug RGB_TOG      &rgb_ug RGB_COLOR_HSB(0, 100, 50)     &kp A       &rgb_ug RGB_HUI        &rgb_ug RGB_HUD
                 &kp ESC    &kp N1    &kp N2    &kp N3  &kp N4  &kp N5                &kp N6     &kp N7     &kp N8   &kp N9     &kp N0     &kp EQUAL  &kp BSPC
                 &kp GRAVE  &kp Q     &kp W     &kp E   &kp R   &kp T                 &kp Y      &kp U      &kp I    &kp O      &kp MINUS  &kp P      &kp BSLH
                 &kp TAB    &kp A     &kp S     &kp D   &kp F   &kp G      &kp SQT    &kp DEL    &kp H      &kp J    &kp K      &kp L      &kp SEMI   &kp ENTER
