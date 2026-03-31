@@ -26,7 +26,7 @@
         compatible = "worldsemi,ws2812-spi";
         reg = <0>;
         spi-max-frequency = <3200000>;
-        chain-length = <27>;
+        chain-length = <32>;
         spi-one-frame = <0x70000000>;
         spi-zero-frame = <0x40000000>;
         color-mapping = <LED_COLOR_ID_GREEN
