@@ -9,7 +9,7 @@
 / {
     chosen {
         zmk,physical-layout = &default_layout;
-        zmk,underglow = &underglow_strip;
+        //zmk,underglow = &underglow_strip;
     };
 
     kscan: kscan {
