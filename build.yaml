@@ -21,12 +21,20 @@
 include:
   - board: seeeduino_xiao_ble
     shield: o67_dongle
+    cmake-args:
+      - -DCONFIG_ZMK_STUDIO=y
 #  - board: raytac_mdbt50q_rx
 #    shield: o67_dongle
+#    cmake-args:
+#      - -DCONFIG_ZMK_STUDIO=y
 #  - board: seeeduino_xiao_ble
 #    shield: o67_left
+#    cmake-args:
+#      - -DCONFIG_ZMK_STUDIO=y
   - board: raytac_mdbt50q_rx
     shield: o67_left
+    cmake-args:
+      - -DCONFIG_ZMK_STUDIO=y
 #  - board: seeeduino_xiao_ble
 #    shield: o67_right
   - board: raytac_mdbt50q_rx
