@@ -11,14 +11,8 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            /*bindings = <
-                &kp N1 &kp N2    &kp N3 &kp N4
-                &kp A  &kp B     &kp C  &kp D
-            >;*/
             bindings = <
-                &kp N1 &kp N2 &kp N3 &kp N4
-                &kp A  &kp B
-                &kp C  &kp D
+                &rgb_ug RGB_TOG      &rgb_ug RGB_COLOR_HSB(0, 100, 50)     &kp A       &rgb_ug RGB_HUI        &rgb_ug RGB_HUD
             >;
         };
     };

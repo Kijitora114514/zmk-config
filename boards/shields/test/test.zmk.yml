@@ -15,9 +15,9 @@ url: https://example.com
 features:
   - keys
   - studio  # Remove this line if your keyboard will not support ZMK Studio
+  - underglow
 requires:
   - seeed_xiao
 
 siblings:
-  - test_left
-  - test_right
+  - test
