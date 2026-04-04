@@ -12,7 +12,7 @@
 
         default_layer {
             bindings = <
-                &rgb_ug RGB_TOG      &rgb_ug RGB_COLOR_HSB(0, 100, 50)     &kp A       &rgb_ug RGB_HUI        &rgb_ug RGB_HUD
+                &rgb_ug RGB_TOG  &kp B  &kp A  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD
             >;
         };
     };
