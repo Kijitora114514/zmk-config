@@ -35,5 +35,27 @@
                 &kp LCTRL  &kp LWIN  &kp LALT          &trans  &kp LANG2  &kp SPACE  &kp SPACE  &kp LANG1  &trans   &kp HOME   &kp PG_UP  &kp PG_DN  &kp END
             >;
         };
+
+        layer2 {
+            bindings = <
+                &none &none &none &none &none
+                &none &none &none &none &none &none       &none &none &none &none &none &none &none
+                &none &none &none &none &none &none       &none &none &none &none &none &none &none
+                &none &none &none &none &none &none &none &none &none &none &none &none &none &none
+                &none &none &none &none &none &none &none &none &none &none &none &none &none &none
+                &none &none &none       &none &none &none &none &none &none &none &none &none &none
+            >;
+        };
+
+        layer3 {
+            bindings = <
+                &none &none &none &none &none
+                &none &none &none &none &none &none       &none &none &none &none &none &none &none
+                &none &none &none &none &none &none       &none &none &none &none &none &none &none
+                &none &none &none &none &none &none &none &none &none &none &none &none &none &none
+                &none &none &none &none &none &none &none &none &none &none &none &none &none &none
+                &none &none &none       &none &none &none &none &none &none &none &none &none &none
+            >;
+        };
     };
 };
