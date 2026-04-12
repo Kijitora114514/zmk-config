@@ -14,12 +14,13 @@ url: https://example.com
 # See https://zmk.dev/docs/development/hardware-integration/hardware-metadata-files#features
 features:
   - keys
-  - studio  # Remove this line if your keyboard will not support ZMK Studio
+  - studio
   - underglow
 requires:
   - seeed_xiao
   - mdbt50q
-
 siblings:
+  - o67_dongle
+  - o67_left_central
   - o67_left
   - o67_right
