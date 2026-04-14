@@ -24,7 +24,7 @@ include:
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: raytac_mdbt50q_rx
-    shield: o67_dongle
+    shield: o67_usb_dongle
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: raytac_mdbt50q_rx
