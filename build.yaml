@@ -40,10 +40,12 @@ include:
 #    cmake-args: - -DCONFIG_ZMK_STUDIO=y
   - board: raytac_mdbt50q_rx
     shield: o67_left
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 #  - board: seeeduino_xiao_ble
 #    shield: o67_right
   - board: raytac_mdbt50q_rx
     shield: o67_right
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
   - board: seeeduino_xiao_ble
     shield: settings_reset
   - board: raytac_mdbt50q_rx
