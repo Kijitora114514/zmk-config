@@ -4,6 +4,9 @@ config SHIELD_O67_DONGLE
 config SHIELD_O67_USB_DONGLE
     def_bool $(shields_list_contains,o67_usb_dongle)
 
+config SHIELD_O67_PROSPECTOR
+    def_bool $(shields_list_contains,o67_prospector)
+
 config SHIELD_O67_LEFT_CENTRAL
     def_bool $(shields_list_contains,o67_left_central)
 

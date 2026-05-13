@@ -8,11 +8,21 @@ manifest:
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
     - name: rschenk
       url-base: https://github.com/rschenk
+    - name: carrefinho  # <-- Prospector dongle
+      url-base: https://github.com/carrefinho  
   projects:
     - name: zmk
       remote: zmkfirmware
       import: app/west.yml
+
+    # Raytac MDBT50Q
     - name: zmk-component-raytac-dongle
       remote: rschenk
+
+    # Prospector dongle module (display and adapter)
+    - name: prospector-zmk-module
+      remote: carrefinho
+      revision: main
+
   self:
     path: config
