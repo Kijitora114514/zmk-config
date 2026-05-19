@@ -33,10 +33,11 @@ include:
     cmake-args: -DCONFIG_ZMK_STUDIO=y
 
   - board: seeeduino_xiao_ble
-    shield: o67_prospector prospector_adapter
+    shield: o67_dongle prospector_adapter
+#    shield: o67_prospector prospector_adapter
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-#    artifact-name: o67_prospector
+    artifact-name: o67_prospector
 
 #  - board: raytac_mdbt50q_rx
 #    shield: o67_dongle
