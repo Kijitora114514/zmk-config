@@ -8,11 +8,11 @@
     compatible = "zmk,kscan-gpio-direct";
     //wakeup-source;
     input-gpios
-        = <&gpio1 14 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)> // toggle
-        , <&gpio1 13 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)> // white
-        , <&gpio0 05 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)> // unlock
-        , <&gpio0 04 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)> // hui
-        , <&gpio0 29 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)> // fullcolor
+        = <&gpio0 11 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)> // toggle
+        , <&gpio0 12 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)> // white
+        , <&gpio0 13 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)> // unlock
+        , <&gpio0 14 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)> // hui
+        , <&gpio0 15 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)> // fullcolor
         ;
 };
 
