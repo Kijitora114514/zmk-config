@@ -20,7 +20,7 @@ manifest:
       remote: rschenk
       revision: v0.4
 
-    # Prospector dongle module (display and adapter)
+    # Prospector dongle
     - name: prospector-zmk-module
       remote: carrefinho
       revision: main
