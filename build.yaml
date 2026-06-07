@@ -19,43 +19,43 @@
 #
 ---
 include:
-  - board: xiao_ble
+  - board: seeeduino_xiao_ble
     shield: o67_dongle
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-  - board: mdbt50q_rx
+  - board: raytac_mdbt50q_rx
     shield: o67_usb_dongle
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-  - board: mdbt50q_rx
+  - board: raytac_mdbt50q_rx
     shield: o67_left_central
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
 
-  - board: xiao_ble
+  - board: seeeduino_xiao_ble
     shield: o67_prospector prospector_adapter
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
 #    artifact-name: o67_prospector
 
-#  - board: mdbt50q_rx
+#  - board: raytac_mdbt50q_rx
 #    shield: o67_dongle
 #    snippet: studio-rpc-usb-uart
 #    cmake-args: - -DCONFIG_ZMK_STUDIO=y
-#  - board: xiao_ble
+#  - board: seeeduino_xiao_ble
 #    shield: o67_left
 #    cmake-args: - -DCONFIG_ZMK_STUDIO=y
-  - board: mdbt50q_rx
+  - board: raytac_mdbt50q_rx
     shield: o67_left
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-#  - board: xiao_ble
+#  - board: seeeduino_xiao_ble
 #    shield: o67_right
-  - board: mdbt50q_rx
+  - board: raytac_mdbt50q_rx
     shield: o67_right
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-  - board: xiao_ble
+  - board: seeeduino_xiao_ble
     shield: settings_reset
-  - board: mdbt50q_rx
+  - board: raytac_mdbt50q_rx
     shield: settings_reset
-#  - board: xiao_ble
+#  - board: seeeduino_xiao_ble
 #    shield: test
