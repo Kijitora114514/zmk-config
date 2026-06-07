@@ -1,5 +1,12 @@
 manifest:
   remotes:
+
+    - name: West Update
+      run: |
+        rm -rf modules/prospector-zmk-module zephyr modules .west build
+        west update -f --clean --reset-modules
+        west list prospector-zmk-module   # ← 確認用
+
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     # Additional modules containing boards/shields/custom code can be listed here as well
@@ -24,7 +31,7 @@ manifest:
     # Prospector dongle module (display and adapter)
     - name: prospector-zmk-module
       remote: prospector
-      revision: v2.2.1
+      revision: 1b889f8c152ad849bcab19a399dd42e44c8aafd5
       path: modules/prospector-zmk-module
 
   self:
