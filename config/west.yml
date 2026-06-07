@@ -22,7 +22,7 @@ manifest:
     # Prospector dongle module (display and adapter)
     - name: prospector-zmk-module
       remote: prospector
-      revision: v2.2.0
+      revision: feat/new-status-screens
       path: modules/prospector-zmk-module
 
   self:
