@@ -32,10 +32,10 @@ include:
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
 
-  - board: seeeduino_xiao_ble
-    shield: o67_prospector prospector_adapter
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+#  - board: seeeduino_xiao_ble
+#    shield: o67_prospector prospector_adapter
+#    snippet: studio-rpc-usb-uart
+#    cmake-args: -DCONFIG_ZMK_STUDIO=y
 #    artifact-name: o67_prospector
 
 #  - board: raytac_mdbt50q_rx
