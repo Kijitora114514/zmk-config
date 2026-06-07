@@ -9,7 +9,7 @@ manifest:
     - name: carrefinho
       url-base: https://github.com/carrefinho
 
-  projects
+  projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
