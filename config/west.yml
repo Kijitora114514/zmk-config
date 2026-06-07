@@ -8,8 +8,8 @@ manifest:
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
     - name: rschenk
       url-base: https://github.com/rschenk
-    - name: carrefinho  # <-- Prospector dongle
-      url-base: https://github.com/carrefinho  
+    - name: prospector
+      url-base: https://github.com/t-ogura
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -21,8 +21,9 @@ manifest:
 
     # Prospector dongle module (display and adapter)
     - name: prospector-zmk-module
-      remote: carrefinho
-      revision: main
+      remote: prospector
+      revision: v2.0.0
+      path: modules/prospector-zmk-module
 
   self:
     path: config
