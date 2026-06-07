@@ -7,8 +7,8 @@ manifest:
     - name: rschenk
       url-base: https://github.com/rschenk
     - name: prospector
-      url-base: https://github.com/t-ogura
-#      url-base: https://github.com/Kijitora114514
+#      url-base: https://github.com/t-ogura
+      url-base: https://github.com/Kijitora114514
 
   projects:
     - name: zmk
