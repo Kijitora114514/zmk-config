@@ -13,7 +13,6 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: 0.3
       import: app/west.yml
 
     # Raytac MDBT50Q
