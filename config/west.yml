@@ -24,7 +24,7 @@ manifest:
     # Prospector dongle module (display and adapter)
     - name: prospector-zmk-module
       remote: prospector
-      revision: main
+      revision: v2.2.0 
       path: modules/prospector-zmk-module
 
   self:
