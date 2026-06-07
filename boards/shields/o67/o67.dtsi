@@ -9,6 +9,7 @@
 / {
     chosen {
         zmk,physical-layout = &default_layout;
+        zephyr,display = &st7789;
         //zmk,underglow = &underglow_strip;
     };
 
