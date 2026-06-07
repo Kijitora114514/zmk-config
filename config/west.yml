@@ -21,8 +21,9 @@ manifest:
       revision: v0.4
 
     # Prospector dongle
-    - name: prospector-zmk-module
-      remote: carrefinho
+#    - name: prospector-zmk-module
+#      remote: carrefinho
+#      revision: main
 
   self:
     path: config
