@@ -10,7 +10,13 @@ manifest:
 #      url-base: https://github.com/t-ogura
       url-base: https://github.com/Kijitora114514
 
-  projects:
+  projects
+    - name: West Update
+      run: |
+        rm -rf modules/prospector-zmk-module zephyr modules .west build
+        west update -f --clean --reset-modules
+        west list prospector-zmk-module   # ← 確認用
+
     - name: zmk
       remote: zmkfirmware
       revision: main
@@ -26,12 +32,6 @@ manifest:
       remote: prospector
       revision: 1b889f8c152ad849bcab19a399dd42e44c8aafd5
       path: modules/prospector-zmk-module
-
-    - name: West Update
-      run: |
-        rm -rf modules/prospector-zmk-module zephyr modules .west build
-        west update -f --clean --reset-modules
-        west list prospector-zmk-module   # ← 確認用
 
   self:
     path: config
