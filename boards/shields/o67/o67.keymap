@@ -16,6 +16,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
+            display-name = "Base";
             bindings = <
                 &rgb_ug RGB_TOG      &rgb_ug RGB_COLOR_HSB(0, 0, 5)      &studio_unlock        &rgb_ug RGB_HUI     &rgb_ug RGB_COLOR_HSB(180, 100, 5)
                 &kp ESC    &kp N1    &kp N2    &kp N3  &kp N4  &kp N5  &bt BT_CLR    &kp N6     &kp N7     &kp N8   &kp N9     &kp N0     &kp EQUAL  &kp BSPC
@@ -27,6 +28,7 @@
         };
 
         layer1 {
+            display-name = "Function";
             bindings = <
                 &trans &trans &trans &trans &trans
                 &kp PSCRN  &kp F1    &kp F2    &kp F3  &kp F4  &kp F5  &trans     &kp F6     &kp F7     &kp F8   &kp F9     &kp F10    &kp EQUAL  &kp BSPC
@@ -38,6 +40,7 @@
         };
 
         layer2 {
+            display-name = "Layer2";
             bindings = <
                 &none &none &none &none &none
                 &none &none &none &none &none &none &none &none &none &none &none &none &none &none
@@ -49,6 +52,7 @@
         };
 
         layer3 {
+            display-name = "Layer3";
             bindings = <
                 &none &none &none &none &none
                 &none &none &none &none &none &none &none &none &none &none &none &none &none &none
@@ -60,6 +64,7 @@
         };
 
         layer4 {
+            display-name = "Layer4";
             bindings = <
                 &none &none &none &none &none
                 &none &none &none &none &none &none &none &none &none &none &none &none &none &none
@@ -71,6 +76,7 @@
         };
 
         layer5 {
+            display-name = "Layer5";
             bindings = <
                 &none &none &none &none &none
                 &none &none &none &none &none &none &none &none &none &none &none &none &none &none
@@ -82,6 +88,7 @@
         };
 
         layer6 {
+            display-name = "Layer6";
             bindings = <
                 &none &none &none &none &none
                 &none &none &none &none &none &none &none &none &none &none &none &none &none &none
@@ -93,6 +100,7 @@
         };
 
         layer7 {
+            display-name = "Layer7";
             bindings = <
                 &none &none &none &none &none
                 &none &none &none &none &none &none &none &none &none &none &none &none &none &none
@@ -104,6 +112,7 @@
         };
 
         layer8 {
+            display-name = "Layer8";
             bindings = <
                 &none &none &none &none &none
                 &none &none &none &none &none &none &none &none &none &none &none &none &none &none
@@ -115,6 +124,7 @@
         };
 
         layer9 {
+            display-name = "Layer9";
             bindings = <
                 &none &none &none &none &none
                 &none &none &none &none &none &none &none &none &none &none &none &none &none &none
