@@ -19,7 +19,7 @@ manifest:
     # Raytac MDBT50Q
     - name: zmk-component-raytac-dongle
       remote: rschenk
-      revision: 0.4
+      revision: v0.4
 
     # Prospector dongle module (display and adapter)
     - name: prospector-zmk-module
