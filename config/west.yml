@@ -6,17 +6,10 @@ manifest:
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
     - name: rschenk
       url-base: https://github.com/rschenk
-    - name: prospector
-#      url-base: https://github.com/t-ogura
-      url-base: https://github.com/Kijitora114514
+    - name: carrefinho
+      url-base: https://github.com/carrefinho
 
   projects
-    - name: West Update
-      run: |
-        rm -rf modules/prospector-zmk-module zephyr modules .west build
-        west update -f --clean --reset-modules
-        west list prospector-zmk-module   # ← 確認用
-
     - name: zmk
       remote: zmkfirmware
       revision: main
@@ -29,9 +22,8 @@ manifest:
 
     # Prospector dongle module (display and adapter)
     - name: prospector-zmk-module
-      remote: prospector
-      revision: 1b889f8c152ad849bcab19a399dd42e44c8aafd5
-      path: modules/prospector-zmk-module
+      remote: carrefinho
+      revision: main
 
   self:
     path: config
