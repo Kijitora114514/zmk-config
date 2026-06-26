@@ -13,20 +13,20 @@ manifest:
     - name: zmk
       remote: zmkfirmware
       revision: v0.3
-#      revision: main
+#      revision: main # 4.x
       import: app/west.yml
 
     # Raytac MDBT50Q
     - name: zmk-component-raytac-dongle
       remote: rschenk
       revision: v0.3
-#      revision: v0.4
+#      revision: v0.4 # 4.x
 
     # Prospector dongle
     - name: prospector-zmk-module
       remote: carrefinho
       revision: main
-#      revision: feat/new-status-screens
+#      revision: feat/new-status-screens # 4.1
 
   self:
     path: config
